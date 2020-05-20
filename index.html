@@ -4,7 +4,72 @@
     <title>TESTA</title>
   </head>
 <body>
+ <div class="w3_info">
+        <!---728x90--->
 
+        <h2>Login to your Account</h2>
+
+        <!---<h3 style="color:red">If you new student please click here <i class="fa fa-hand-o-right"></i>  <a href="../REGISTRATION_NEW/Reg_Registration_Unregisterd_Complete.aspx">Click</a></h3>--->
+        <br />
+        <p>Enter your details to login.</p>
+
+        <label>Login Option</label>
+        <div class="input-group" style="padding:10px; padding-top:12px; padding-bottom:12px">
+            <span class="inline-rb" onchange="handleChange1();"><input id="rdbPassword" type="radio" name="Option"
+                    value="rdbPassword" checked="checked" /><label for="rdbPassword">Login With
+                    Password</label></span>&nbsp;&nbsp;
+            <span class="inline-rb" onchange="handleChange2();"><input id="rdbOtp" type="radio" name="Option"
+                    value="rdbOtp" /><label for="rdbOtp">Login With OTP</label></span>
+        </div>
+
+        <label>Enter Login ID</label>
+        <div class="input-group">
+            <span class="fa fa-lock" aria-hidden="true"></span>
+            <input name="R_txtRegNo" type="text" id="R_txtRegNo" autocomplete="off" class="form-control"
+                placeholder="Application No / Registration No / Roll No" />
+        </div>
+
+        <label id="lblPassword">Password</label>
+        <div class="input-group tooltip" id="pnlPassword">
+            <span class="fa fa-lock" aria-hidden="true"></span>
+            <input name="V_txtRegDob" type="password" id="V_txtRegDob" autocomplete="new-password" class="form-control"
+                placeholder="Enter Password" style="width:90%;" />
+            <i class="fa fa-eye-slash" id="P1" title="Show" onclick="ShowPassword()"
+                style="float: right; margin-top: -30px; margin-right: 5px; cursor:pointer"></i>
+            <i class="fa fa-eye" id="P2" title="Hide" onclick="HidePassword()"
+                style="float: right; margin-top: -30px; margin-right: 5px; cursor:pointer; display:none"></i>
+            <span class="tooltiptext"><b>Note : </b> if you use dob as a password. Enter this format DD/MM/YYYY. like
+                02/08/1992 </span>
+        </div>
+
+        <label>Captcha</label> &nbsp;<span id="Anthem_imgCaptcha__"><input type="image" name="imgCaptcha"
+                id="imgCaptcha" src="dist/img/Refresh.png"
+                onclick="javascript:Anthem_FireCallBackEvent(this,event,&#39;imgCaptcha&#39;,&#39;&#39;,true,&#39;&#39;,&#39;&#39;,&#39;&#39;,true,null,null,null,true,true);return false;"
+                style="width:17px;border-width:0px;" /></span>
+        <div class="input-group">
+            <span class="fa" aria-hidden="true" style="width:30%!important; text-align:left">&nbsp;<span
+                    id="Anthem_lblStopSpam__"><span id="lblStopSpam"
+                        style="color:#01CD74;font-size:17px;font-weight:bold;">4 + 10</span></span> =</span>
+            <span id="Anthem_txtStopSpam__"><input name="txtStopSpam" type="text" maxlength="2" id="txtStopSpam"
+                    autocomplete="off" class="form-control" placeholder="Enter calculated value" oncut="return false;"
+                    oncopy="return false;" onpaste="return false;" style="width:60%!important" /></span>
+        </div>
+
+        <button type="button" id="btnLoginPass" class="btn btn-danger btn-block" onclick="fnGetValidate()"
+            style="width:100%">Login</button>
+        <input type="submit" name="btnRLogIn" value="Sign In" id="btnRLogIn" class="btn btn-primary btn-block btn-flat"
+            style="display:none" />
+
+        <span id="Anthem_lblRMessage__"><span id="lblRMessage" class="lblmessage"></span></span>
+        <span id="Anthem_lblInvalidCapcha__"></span>
+
+        <button type="button" id="btnOTPPass" class="btn btn-primary btn-block" onclick="fnGetValidateForOTP()"
+            style="display:none; width:100%">Login</button>
+        <input type="submit" name="btnotpAuth" value="Sign In" id="btnotpAuth"
+            class="btn btn-primary btn-block btn-flat" style="display:none" />
+
+
+    </div>
 <div id="demo"></div>
 
 <script>
@@ -18,7 +83,7 @@ txt += "<p>Browser Online: " + navigator.onLine + "</p>";
 txt += "<p>Platform: " + navigator.platform + "</p>";
 txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
 
-document.getElementById("demo").innerHTML = txt;
+//document.getElementById("demo").innerHTML = txt;
 </script>
 
 </body>
